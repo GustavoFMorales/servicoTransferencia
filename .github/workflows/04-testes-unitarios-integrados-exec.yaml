@@ -1,0 +1,43 @@
+name: "Testes unitarios integrados"
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+jobs:
+    Teste-unitario-01:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '24'
+            - name: instalando dependências
+              run: npm install
+            - name: Executando testes unitários 01
+              run: npm run test
+    Testes-unitarios-02:
+        runs-on: ubuntu-latest
+        needs: [Teste-unitario-01]
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '24'
+            - name: instalando dependências
+              run: npm install
+            - name: Executando testes unitários 01
+              run: npm run test
+    Testes-unitarios-03:
+        runs-on: ubuntu-latest
+        needs: [Teste-unitario-01]
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '24'
+            - name: instalando dependências
+              run: npm install
+            - name: Executando testes unitários 01
+              run: npm run test       
+        
