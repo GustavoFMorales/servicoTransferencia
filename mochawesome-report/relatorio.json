@@ -1,0 +1,218 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-10T08:54:44.424Z",
+    "end": "2026-06-10T08:54:44.429Z",
+    "duration": 5,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "79fb3cc9-97b5-47e4-9b60-344e3110199b",
+      "title": "",
+      "fullFile": "C:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Meus Projetos\\Pós-graduação em Automação de Testes de Software\\Programacao_para_automacao_de_teste\\servicoTransferencia\\test\\servicoTransferencia.test.js",
+      "file": "\\test\\servicoTransferencia.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+          "title": "Servico de Transferencia",
+          "fullFile": "C:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Meus Projetos\\Pós-graduação em Automação de Testes de Software\\Programacao_para_automacao_de_teste\\servicoTransferencia\\test\\servicoTransferencia.test.js",
+          "file": "\\test\\servicoTransferencia.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Servico de Transferencia\"",
+              "fullTitle": "Servico de Transferencia \"before each\" hook in \"Servico de Transferencia\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servicoTransferencia = new ServicoTranferencia();",
+              "err": {},
+              "uuid": "2594148c-3257-4fa9-99f8-72e25ebac93c",
+              "parentUUID": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar a mensagem de erro quando a informação de origem não for preenchida",
+              "fullTitle": "Servico de Transferencia Deve validar a mensagem de erro quando a informação de origem não for preenchida",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const mensagemDeErro =\n  \"As informações de destino, origem e valor precisam ser preenchidas\";\nassert.throws(\n  () => {\n    servicoTransferencia.transferir();\n  },\n  {\n    message: mensagemDeErro,\n  },\n);",
+              "err": {},
+              "uuid": "9f8f88ec-070b-4a78-9656-edc6bfb9cee6",
+              "parentUUID": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar mensagem de erro quando a informação de destino não for preenchida",
+              "fullTitle": "Servico de Transferencia Deve validar mensagem de erro quando a informação de destino não for preenchida",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const mensagemDeErro =\n  \"As informações de destino, origem e valor precisam ser preenchidas\";\nassert.throws(\n  () => {\n    servicoTransferencia.transferir(\"Gustavo\", \"\", 500);\n  },\n  {\n    message: mensagemDeErro,\n  },\n);",
+              "err": {},
+              "uuid": "6a6d8622-5ebd-4fb7-9ad8-91bdb4f7fbc5",
+              "parentUUID": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar mensagem de erro quando a informação do valor não for preenchida",
+              "fullTitle": "Servico de Transferencia Deve validar mensagem de erro quando a informação do valor não for preenchida",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const mensagemDeErro =\n  \"As informações de destino, origem e valor precisam ser preenchidas\";\nassert.throws(\n  () => {\n    servicoTransferencia.transferir(\"Gustavo\", \"Paola\");\n  },\n  {\n    message: mensagemDeErro,\n  },\n);",
+              "err": {},
+              "uuid": "15a024fd-3f87-44ba-abae-dfefc6fecf09",
+              "parentUUID": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar se a transferencia foi realizada com sucesso",
+              "fullTitle": "Servico de Transferencia Deve validar se a transferencia foi realizada com sucesso",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const transferir = servicoTransferencia.transferir('Gustavo', 'Paola', 500);\nconst mensagemSucesso = 'Transferencia realizada com sucesso';\nassert.equal(transferir,mensagemSucesso);",
+              "err": {},
+              "uuid": "894c8a87-6419-4f3e-a8ad-ac425d695fac",
+              "parentUUID": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar as informações do extrato",
+              "fullTitle": "Servico de Transferencia Deve validar as informações do extrato",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servicoTransferencia.transferir('Gustavo', 'Paola', 500);\nassert.deepEqual(servicoTransferencia.consultarExtrato[0], { origem: 'Gustavo', destino: 'Paola', valor: 500 });",
+              "err": {},
+              "uuid": "8194bf5c-c432-4ba1-9e03-ccbfd7f65157",
+              "parentUUID": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar se o valor da transferencia for maior que 5000 a informção requerAutorizacao é apresentada",
+              "fullTitle": "Servico de Transferencia Deve validar se o valor da transferencia for maior que 5000 a informção requerAutorizacao é apresentada",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servicoTransferencia.transferir('Gustavo', 'Paola', 5000.01);\nassert.deepEqual(servicoTransferencia.consultarExtrato[0], { origem: 'Gustavo', destino: 'Paola', valor: 5000.01, requerAutorizacao:true});",
+              "err": {},
+              "uuid": "5da054d7-41c2-4b93-94b6-92b7a8ae54ba",
+              "parentUUID": "ebb593b3-5a02-4a8c-b83a-1c0fff44028b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f8f88ec-070b-4a78-9656-edc6bfb9cee6",
+            "6a6d8622-5ebd-4fb7-9ad8-91bdb4f7fbc5",
+            "15a024fd-3f87-44ba-abae-dfefc6fecf09",
+            "894c8a87-6419-4f3e-a8ad-ac425d695fac",
+            "8194bf5c-c432-4ba1-9e03-ccbfd7f65157",
+            "5da054d7-41c2-4b93-94b6-92b7a8ae54ba"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "relatorio",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "reportFilename": "relatorio",
+        "inline": "true"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
