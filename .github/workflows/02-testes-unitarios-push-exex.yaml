@@ -1,0 +1,19 @@
+name: "Testes unitários via push"
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    testes-unitarios:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '18'
+            - name: Instalando depencências
+              run: npm install
+            - name: Executado testes unitarios
+              run: npm run test
