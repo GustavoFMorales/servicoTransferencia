@@ -28,7 +28,7 @@ jobs:
             
             - name: Publicar relatório de teste
               if: always()
-              uses: actions/uplaod-artifact@v4
+              uses: actions/upload-artifact@v4
               with:
                 name: relatorio-teses
                 path: mochawesome-report
