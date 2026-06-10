@@ -7,7 +7,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha ./test/**/*test.js --reporter mochawesome --reporter-options reportDir=mochawesome-report,reportFilename=relatorio,inline=true"
+    "test": "mocha ./test/**/*test.js --reporter mochawesome --reporter-options reportDir=mochawesome-report,reportFilename=relatorio,inline=true"
   },
   "dependencies": {
     "mocha": "^11.7.5",
