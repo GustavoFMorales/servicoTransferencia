@@ -1,0 +1,52 @@
+name: "Testes unitarios exec agendada"
+
+on:
+    schedule:
+        - cron: '40 7 * * 1-5'
+jobs:
+    teste-unitarios:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '24'
+            - name: Notificar início do processo via discord
+              env:
+                WEBHOOK: ${{secrets.DISCORD_WEBHOOK_URL}}
+              run: |
+                curl -H "Content-Type: application/json" \
+                -X POST \
+                -d "{\ "content\": \"Inicio do processo de teste unitários\"}" \
+                $WEBHOOK
+            - name: Instalando Dependendecias
+              run : npm install
+            - name: Executando testes unitarios
+              run : npm run test
+            
+            - name: Publicando relatorios 
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: Relatorio-testes
+                path: mochawesome-report
+            - name: Notificar sucesso no Discord
+              if: success()
+              uses: sarisia/actions-status-discord@v1
+              with:
+                webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+                status: 'success'
+                title: 'Pipeline Concluída com Sucesso'
+                description: 'Todos os testes e2e passaram.'
+                color: 0x28A745           
+            - name: Notificar falha no Discord
+              if: failure()
+              uses: sarisia/actions-status-discord@v1
+              with:
+                webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+                status: 'failure'
+                title: 'Pipeline Falhou'
+                description: 'Um ou mais testes e2e falharam.'
+                color: 0xDC3545
+
+
